@@ -1,0 +1,20 @@
+title = "Paso secret scanning"
+
+[extend]
+useDefault = true
+
+# Content fingerprints, not credentials. Keep every other manifest line scanned.
+[[allowlists]]
+description = "Generated audio cache fingerprints"
+condition = "AND"
+paths = ['''public/audio/manifest\.json$''']
+regexTarget = "line"
+regexes = ['''"generationKey": "[a-f0-9]{64}"''']
+
+# The generic token detector mistakes an imported class name for an API key.
+[[allowlists]]
+description = "Transformers model class import"
+condition = "AND"
+paths = ['''self-host/huggingface/models\.py$''']
+regexTarget = "line"
+regexes = ['''^\s*from transformers import AutoTokenizer, Qwen3_5ForConditionalGeneration\s*$''']

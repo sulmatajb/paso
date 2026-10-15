@@ -1,0 +1,20 @@
+name: Improvement proposal
+description: Propose a focused improvement for learners or contributors
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What learner or contributor problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change and alternatives
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope, dependencies, and willingness to help
+      description: Note any effects on privacy, model licenses, hosting cost, or existing progress.

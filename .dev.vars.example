@@ -1,0 +1,4 @@
+# Optional free community inference for local development.
+# Copy to .dev.vars and restart npm run dev. Never put an HF owner token here.
+# Leave unset if you prefer explicit, optional on-device model downloads.
+HUGGINGFACE_SPACE=bessi190/paso-voice-practice

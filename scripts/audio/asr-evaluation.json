@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "evaluatedOn": "2026-10-14",
+  "fixtureKind": "Kokoro-82M synthetic Spanish audio; not human speech",
+  "selection": "First phrase of each of the 20 Spanish lessons appended in phase 3, Dora voice",
+  "backend": "onnxruntime-node CPU, Transformers.js 4.3.1",
+  "generation": {
+    "dtype": "q8",
+    "language": "spanish",
+    "task": "transcribe",
+    "max_new_tokens": 64,
+    "do_sample": false
+  },
+  "limitations": [
+    "Small synthetic smoke test, not a real-world accuracy or pronunciation benchmark",
+    "Browser WASM, microphone capture and offline reload need separate validation"
+  ],
+  "models": {
+    "tiny": {
+      "model": {
+        "id": "onnx-community/whisper-tiny",
+        "revision": "ff4177021cc41f7db950912b73ea4fdf7d01d8e7",
+        "baseModel": "openai/whisper-tiny",
+        "license": "MIT",
+        "dtype": "q8",
+        "transformersVersion": "4.3.1",
+        "sampleRate": 16000
+      },
+      "exactWords": 10,
+      "wordsIgnoringAccents": 11,
+      "total": 20,
+      "medianInferenceMs": 233.5,
+      "results": [
+        {
+          "key": "es-from-en/es-breakfast/es-breakfast-breakfast-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué quieres desayunar?",
+          "actual": " ¿Qué quiere es desayunar?",
+          "milliseconds": 342,
+          "clipSha256": "9469a4f644d5aa64bd49ac89087e5427a4833398eef5c22ee97f58827f42870b",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-at-a-restaurant/es-at-a-restaurant-meal-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué desea comer?",
+          "actual": " ¿Qué desea comer?",
+          "milliseconds": 236,
+          "clipSha256": "93a5b3e0c44f660d5d64743b51dfe854ba189c7dd3147d36618bde9544c84f8b",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-at-the-market/es-at-the-market-apple-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Cuántas manzanas quiere?",
+          "actual": " ¿Cuántas manzanas quiere?",
+          "milliseconds": 267,
+          "clipSha256": "7466aaf65b1b3ddbacfaee5254bd01e69e0eab594621cd05ca5ff2130542cd68",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-clothes/es-clothes-size-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué talla necesita?",
+          "actual": " ¿Qué tal ya necesita?",
+          "milliseconds": 247,
+          "clipSha256": "024cadd9cafbcefab0109c550523821258228bfe81fd9b730391ccf811b323ed",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-paying-and-choosing/es-paying-and-choosing-payment-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Va a pagar en efectivo o con tarjeta?",
+          "actual": " Para pagar un efectivo o contrajeta.",
+          "milliseconds": 263,
+          "clipSha256": "7581d00a110e7a45eeece1eff160dac5b0ea44c05f9a783a51595e2b4660e2ac",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-daily-routine/es-daily-routine-wake-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿A qué hora te levantas?",
+          "actual": " Aquí ahora te levantas.",
+          "milliseconds": 234,
+          "clipSha256": "d085f6f274842c6d0262c8cd6f0bf198f03dfc8879f151861ec6f0392e4a0b2d",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-family/es-family-siblings-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Tienes hermanos?",
+          "actual": " Tienes hermanos.",
+          "milliseconds": 226,
+          "clipSha256": "6fe6638337d07e3061ace3084a22019ed8943c4746e8b512e0aacea82b81dcea",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-at-home/es-at-home-home-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Dónde vives?",
+          "actual": " ¿Dónde vivéis?",
+          "milliseconds": 227,
+          "clipSha256": "26fe8397c2f81ca1439a746a1528d5e39f4299230ec42833321e48282907c524",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-time-and-days/es-time-and-days-day-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué día es hoy?",
+          "actual": " ¿Qué es?",
+          "milliseconds": 202,
+          "clipSha256": "07effd5c6fddcd37e792baaf06bee519385c500af89e952d9c6b6f83db7e0266",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-free-time/es-free-time-likes-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué te gusta hacer?",
+          "actual": " ¿Qué te gusta hacer?",
+          "milliseconds": 241,
+          "clipSha256": "d08afd82ae5fe8105da5e09f214b40349e9ccfc95cb03c1a0b36e06fef54d5c1",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-train-tickets/es-train-tickets-destination-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿A dónde quiere ir?",
+          "actual": " ¿A dónde quiere ir?",
+          "milliseconds": 232,
+          "clipSha256": "c394a74f40d4274cefc722928cbbe7f6517958caf66d135db232a211b8c9a6f8",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-hotel/es-hotel-reservation-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Tiene una reserva?",
+          "actual": " tiene una reserva.",
+          "milliseconds": 238,
+          "clipSha256": "1023f863b3c490b3f1718eb783980118f0bf4fe12bdb862f0cd8fbd1ba37f518",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-around-town/es-around-town-museum-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Cómo llego al museo?",
+          "actual": " como llegó al museo.",
+          "milliseconds": 222,
+          "clipSha256": "4f1485de9314eb1f512c953c954bceab2cb3877e6ce0b55382528ca4eeefbcf4",
+          "exactWords": false,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-weather-and-plans/es-weather-and-plans-weather-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué tiempo hace?",
+          "actual": " ¿Qué tiempo hace?",
+          "milliseconds": 224,
+          "clipSha256": "87c4f04c5ccf4ee76e5f52ad7ab2276ddaca0bb27027afafeb21d878a28394bc",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-meeting-on-the-move/es-meeting-on-the-move-departure-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿A qué hora sale tu tren?",
+          "actual": " ¿A qué hora sale tu tren?",
+          "milliseconds": 233,
+          "clipSha256": "36d99cb1c1718d866f10cb31dc44603871c9f83da0f1c1696df24cbf04375683",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-understanding/es-understanding-understand-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Me entiendes?",
+          "actual": " Mientras que no hay un momento en el que no hay un momento en el que no hay un momento en el que no hay un momento en el que no hay un momento en el que no hay un momento en el que no hay un momento en el que no hay un momento en el que no hay un momento en",
+          "milliseconds": 898,
+          "clipSha256": "a3f333d8324cdd36042491d467853d86762eb3f445d4612bf74861f3e6e5e5f1",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-asking-for-help/es-asking-for-help-problem-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué le pasa?",
+          "actual": " ¿Qué le pasa?",
+          "milliseconds": 228,
+          "clipSha256": "9affba72dae77b4f7c2097d9a88714b0c0b440938332ea9c131a0be58d786fa0",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-solving-problems/es-solving-problems-issue-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué problema tiene?",
+          "actual": " ¿Qué problema tiene?",
+          "milliseconds": 219,
+          "clipSha256": "d1827981038dfc1f24afbedf8480a9a34c77b09d0467869557d8a5c391233388",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-invitations/es-invitations-dinner-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Te apetece cenar conmigo?",
+          "actual": " te apetes a cenar conmigo",
+          "milliseconds": 316,
+          "clipSha256": "f9b3b96baac5012911adfd638ebd6bf1d7f9e2855c76e5a3078084e8140240f0",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-your-day-in-spanish/es-your-day-in-spanish-plans-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué planes tienes para mañana?",
+          "actual": " que planes tienen para mañana.",
+          "milliseconds": 221,
+          "clipSha256": "ca7eab3b218811baf3ad2deef92f74fc845783d38b9184f8f1eea1694708d03e",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        }
+      ]
+    },
+    "base": {
+      "model": {
+        "id": "onnx-community/whisper-base",
+        "revision": "1846881b6b3a3024392c1eea3ad983695bc23925",
+        "baseModel": "openai/whisper-base",
+        "license": "MIT",
+        "dtype": "q8",
+        "transformersVersion": "4.3.1",
+        "sampleRate": 16000
+      },
+      "exactWords": 13,
+      "wordsIgnoringAccents": 16,
+      "total": 20,
+      "medianInferenceMs": 298.5,
+      "results": [
+        {
+          "key": "es-from-en/es-breakfast/es-breakfast-breakfast-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué quieres desayunar?",
+          "actual": " ¿Qué quieres desayunar?",
+          "milliseconds": 377,
+          "clipSha256": "9469a4f644d5aa64bd49ac89087e5427a4833398eef5c22ee97f58827f42870b",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-at-a-restaurant/es-at-a-restaurant-meal-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué desea comer?",
+          "actual": " ¿Qué desea comer?",
+          "milliseconds": 313,
+          "clipSha256": "93a5b3e0c44f660d5d64743b51dfe854ba189c7dd3147d36618bde9544c84f8b",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-at-the-market/es-at-the-market-apple-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Cuántas manzanas quiere?",
+          "actual": " ¿Cuántas manzanas quiere?",
+          "milliseconds": 396,
+          "clipSha256": "7466aaf65b1b3ddbacfaee5254bd01e69e0eab594621cd05ca5ff2130542cd68",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-clothes/es-clothes-size-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué talla necesita?",
+          "actual": " que tallan es decir",
+          "milliseconds": 324,
+          "clipSha256": "024cadd9cafbcefab0109c550523821258228bfe81fd9b730391ccf811b323ed",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-paying-and-choosing/es-paying-and-choosing-payment-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Va a pagar en efectivo o con tarjeta?",
+          "actual": " va a pagar inefectivo o con tarjeta.",
+          "milliseconds": 409,
+          "clipSha256": "7581d00a110e7a45eeece1eff160dac5b0ea44c05f9a783a51595e2b4660e2ac",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-daily-routine/es-daily-routine-wake-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿A qué hora te levantas?",
+          "actual": " Aquí, ahora te levantas.",
+          "milliseconds": 299,
+          "clipSha256": "d085f6f274842c6d0262c8cd6f0bf198f03dfc8879f151861ec6f0392e4a0b2d",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-family/es-family-siblings-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Tienes hermanos?",
+          "actual": " Tienes hermanos.",
+          "milliseconds": 329,
+          "clipSha256": "6fe6638337d07e3061ace3084a22019ed8943c4746e8b512e0aacea82b81dcea",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-at-home/es-at-home-home-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Dónde vives?",
+          "actual": " donde vives.",
+          "milliseconds": 283,
+          "clipSha256": "26fe8397c2f81ca1439a746a1528d5e39f4299230ec42833321e48282907c524",
+          "exactWords": false,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-time-and-days/es-time-and-days-day-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué día es hoy?",
+          "actual": " que dia es hoy",
+          "milliseconds": 277,
+          "clipSha256": "07effd5c6fddcd37e792baaf06bee519385c500af89e952d9c6b6f83db7e0266",
+          "exactWords": false,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-free-time/es-free-time-likes-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué te gusta hacer?",
+          "actual": " ¿Qué te gusta hacer?",
+          "milliseconds": 331,
+          "clipSha256": "d08afd82ae5fe8105da5e09f214b40349e9ccfc95cb03c1a0b36e06fef54d5c1",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-train-tickets/es-train-tickets-destination-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿A dónde quiere ir?",
+          "actual": " ¿A dónde quiere ir?",
+          "milliseconds": 289,
+          "clipSha256": "c394a74f40d4274cefc722928cbbe7f6517958caf66d135db232a211b8c9a6f8",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-hotel/es-hotel-reservation-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Tiene una reserva?",
+          "actual": " Tiene una reserva.",
+          "milliseconds": 292,
+          "clipSha256": "1023f863b3c490b3f1718eb783980118f0bf4fe12bdb862f0cd8fbd1ba37f518",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-around-town/es-around-town-museum-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Cómo llego al museo?",
+          "actual": " como llegó al museo",
+          "milliseconds": 292,
+          "clipSha256": "4f1485de9314eb1f512c953c954bceab2cb3877e6ce0b55382528ca4eeefbcf4",
+          "exactWords": false,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-weather-and-plans/es-weather-and-plans-weather-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué tiempo hace?",
+          "actual": " ¿Qué tiempo hace?",
+          "milliseconds": 280,
+          "clipSha256": "87c4f04c5ccf4ee76e5f52ad7ab2276ddaca0bb27027afafeb21d878a28394bc",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-meeting-on-the-move/es-meeting-on-the-move-departure-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿A qué hora sale tu tren?",
+          "actual": " ¿A qué hora sale tu tren?",
+          "milliseconds": 319,
+          "clipSha256": "36d99cb1c1718d866f10cb31dc44603871c9f83da0f1c1696df24cbf04375683",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-understanding/es-understanding-understand-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Me entiendes?",
+          "actual": " Me entiendes.",
+          "milliseconds": 291,
+          "clipSha256": "a3f333d8324cdd36042491d467853d86762eb3f445d4612bf74861f3e6e5e5f1",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-asking-for-help/es-asking-for-help-problem-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué le pasa?",
+          "actual": " ¿Qué le pasa?",
+          "milliseconds": 270,
+          "clipSha256": "9affba72dae77b4f7c2097d9a88714b0c0b440938332ea9c131a0be58d786fa0",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-solving-problems/es-solving-problems-issue-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué problema tiene?",
+          "actual": " ¿Qué problema tiene?",
+          "milliseconds": 298,
+          "clipSha256": "d1827981038dfc1f24afbedf8480a9a34c77b09d0467869557d8a5c391233388",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        },
+        {
+          "key": "es-from-en/es-invitations/es-invitations-dinner-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Te apetece cenar conmigo?",
+          "actual": " Te apeté ese cenar conmigo.",
+          "milliseconds": 449,
+          "clipSha256": "f9b3b96baac5012911adfd638ebd6bf1d7f9e2855c76e5a3078084e8140240f0",
+          "exactWords": false,
+          "wordsIgnoringAccents": false
+        },
+        {
+          "key": "es-from-en/es-your-day-in-spanish/es-your-day-in-spanish-plans-question",
+          "voice": "ef_dora",
+          "fixtureKind": "synthetic-Kokoro-82M",
+          "expected": "¿Qué planes tienes para mañana?",
+          "actual": " ¿Qué planes tienes para mañana?",
+          "milliseconds": 291,
+          "clipSha256": "ca7eab3b218811baf3ad2deef92f74fc845783d38b9184f8f1eea1694708d03e",
+          "exactWords": true,
+          "wordsIgnoringAccents": true
+        }
+      ]
+    }
+  }
+}

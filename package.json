@@ -1,0 +1,72 @@
+{
+  "name": "paso-language",
+  "private": true,
+  "version": "0.4.0",
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "scripts": {
+    "dev": "node scripts/run-framework.mjs dev",
+    "build": "tsc -b && node scripts/run-framework.mjs build && node scripts/build-sw.mjs",
+    "preview": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
+    "check": "tsc -b",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "predev": "node scripts/copy-asr-runtime.mjs",
+    "prebuild": "node scripts/copy-asr-runtime.mjs",
+    "db:generate": "drizzle-kit generate",
+    "install:ci": "npm install --prefer-offline --no-audit --no-fund",
+    "db:init": "node scripts/apply-local-migrations.mjs",
+    "test:speech": "playwright test -c playwright.speech.config.ts"
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "5.3.0",
+    "@fontsource/fraunces": "5.3.0",
+    "dexie": "4.4.6",
+    "lucide-react": "1.57.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7",
+    "ts-fsrs": "5.4.2",
+    "@huggingface/transformers": "4.3.1",
+    "next": "16.4.1",
+    "drizzle-orm": "0.45.2",
+    "@mlc-ai/web-llm": "0.2.86",
+    "ephone": "1.0.2",
+    "@gradio/client": "2.7.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.19.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "6.1.2",
+    "fake-indexeddb": "6.2.5",
+    "typescript": "5.9.3",
+    "vite": "8.3.4",
+    "vitest": "5.0.4",
+    "@axe-core/playwright": "4.13.0",
+    "prettier": "3.9.10",
+    "vite-plugin-pwa": "2.0.0",
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@cloudflare/workers-types": "4.20260515.1",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "0.31.10",
+    "vinext": "1.0.0-beta.5",
+    "wrangler": "4.92.0",
+    "react-server-dom-webpack": "19.3.1"
+  },
+  "description": "Open-source language learning with lessons, spaced repetition, and open-model voice conversations.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sulmatajb/paso.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sulmatajb/paso/issues"
+  },
+  "homepage": "https://github.com/sulmatajb/paso#readme"
+}

@@ -1,0 +1,50 @@
+services:
+  conversation:
+    image: ghcr.io/ggml-org/llama.cpp@sha256:89f180f16f295ee496fe00924ec2118cae2efec519d1a82c605420af09d2a6df
+    command:
+      - --model
+      - /models/Qwen3.5-4B-Q4_K_M.gguf
+      - --alias
+      - paso-qwen3
+      - --host
+      - 0.0.0.0
+      - --port
+      - '8080'
+      - --ctx-size
+      - '2048'
+      - --parallel
+      - '1'
+      - --n-predict
+      - '120'
+      - --jinja
+      - --chat-template-kwargs
+      - '{"enable_thinking":false}'
+      - --reasoning-budget
+      - '0'
+      - --no-webui
+      - --api-key-file
+      - /run/secrets/inference_key
+    volumes:
+      - ./models:/models:ro
+    secrets: [inference_key]
+    ports: ['127.0.0.1:8080:8080']
+    restart: unless-stopped
+
+  speech:
+    build:
+      context: .
+      dockerfile: tts/Dockerfile
+    environment:
+      PASO_MODELS_DIR: /models
+      PASO_KEY_FILE: /run/secrets/inference_key
+      PASO_HOST: 0.0.0.0
+      PASO_PORT: '8880'
+    volumes:
+      - ./models:/models:ro
+    secrets: [inference_key]
+    ports: ['127.0.0.1:8880:8880']
+    restart: unless-stopped
+
+secrets:
+  inference_key:
+    file: ./secrets/inference-key.txt

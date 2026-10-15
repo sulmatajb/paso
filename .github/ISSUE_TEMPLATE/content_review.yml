@@ -1,0 +1,20 @@
+name: Lesson or translation review
+description: Improve wording, answer variants, explanations, or pronunciation
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Course, lesson, exercise, or phrase ID
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Current content, suggested correction, and reasoning
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Language variety and review context
+      description: Mention regional usage or a supporting source. No private identifying information is needed.

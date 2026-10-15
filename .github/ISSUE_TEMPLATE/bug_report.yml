@@ -1,0 +1,38 @@
+name: Bug report
+description: A reproducible problem with learning, progress, audio, or setup
+body:
+  - type: markdown
+    attributes:
+      value: 'Do not include private recordings, transcripts, exports, or credentials. Report vulnerabilities through the Security tab.'
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the course/lesson ID or setup command when relevant.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Device, OS, browser, and commit/version
+    validations:
+      required: true
+  - type: dropdown
+    id: inference
+    attributes:
+      label: Inference mode, if relevant
+      options:
+        - Not applicable
+        - Hugging Face community Space
+        - Self-hosted server
+        - On-device models
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or sanitized logs

@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 2,
+  "id": "en-from-es",
+  "version": 1,
+  "sourceLanguage": "es",
+  "targetLanguage": "en",
+  "title": "Inglés para empezar",
+  "description": "Una primera lección de inglés para presentarte y saludar.",
+  "unit": {
+    "id": "en-first-steps",
+    "title": "Tus primeras palabras",
+    "description": "Empieza con saludos, presentaciones y despedidas."
+  },
+  "lessons": [
+    {
+      "id": "en-first-hello",
+      "version": 1,
+      "title": "Tu primer hello",
+      "subtitle": "Pequeñas frases para empezar a conversar.",
+      "estimatedMinutes": 6,
+      "prerequisites": [],
+      "phrases": [
+        {
+          "id": "en-hello",
+          "target": "Hello",
+          "translation": "Hola",
+          "note": "Hello sirve para saludar a cualquier hora. Hi es una alternativa informal.",
+          "acceptedAnswers": ["Hello", "Hi"]
+        },
+        {
+          "id": "en-morning",
+          "target": "Good morning",
+          "translation": "Buenos días",
+          "note": "Usa good morning para saludar por la mañana."
+        },
+        {
+          "id": "en-name",
+          "target": "My name is Alex",
+          "translation": "Me llamo Alex",
+          "note": "My name is significa “mi nombre es”. Añade tu nombre después de is.",
+          "acceptedAnswers": ["My name is Alex", "My name’s Alex", "I am Alex", "I’m Alex"]
+        },
+        {
+          "id": "en-meet",
+          "target": "Nice to meet you",
+          "translation": "Mucho gusto",
+          "note": "Una respuesta amable cuando te presentan a alguien.",
+          "acceptedAnswers": ["Nice to meet you", "Pleased to meet you"]
+        },
+        {
+          "id": "en-thanks",
+          "target": "Thank you",
+          "translation": "Gracias",
+          "note": "Thank you es la forma habitual. Thanks es más informal.",
+          "acceptedAnswers": ["Thank you", "Thanks"]
+        },
+        {
+          "id": "en-bye",
+          "target": "See you later",
+          "translation": "Hasta luego",
+          "note": "Una despedida cotidiana que significa “nos vemos luego”.",
+          "acceptedAnswers": ["See you later", "See you soon"]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "en-hello-choice",
+          "type": "choice",
+          "title": "Empieza con un saludo.",
+          "instruction": "¿Cómo se dice «Hola» en inglés?",
+          "phraseId": "en-hello",
+          "hint": "La palabra es Hello.",
+          "explanation": "Hello significa hola. Hi también es un saludo, más informal.",
+          "options": ["Thank you", "Hello", "See you later"],
+          "answer": "Hello"
+        },
+        {
+          "id": "en-morning-choice",
+          "type": "choice",
+          "title": "Saluda por la mañana.",
+          "instruction": "¿Qué significa «Good morning»?",
+          "phraseId": "en-morning",
+          "hint": "Morning significa mañana, la parte del día.",
+          "explanation": "Good morning significa buenos días.",
+          "options": ["Hasta luego", "Mucho gusto", "Buenos días"],
+          "answer": "Buenos días"
+        },
+        {
+          "id": "en-name-order",
+          "type": "order",
+          "title": "Di cómo te llamas.",
+          "instruction": "Ordena «Me llamo Alex» en inglés.",
+          "phraseId": "en-name",
+          "hint": "My + name + is + Alex.",
+          "explanation": "My name is Alex. Puedes sustituir Alex por tu propio nombre.",
+          "tokens": ["Alex", "is", "My", "name"],
+          "answer": ["My", "name", "is", "Alex"]
+        },
+        {
+          "id": "en-meet-choice",
+          "type": "choice",
+          "title": "Responde a una presentación.",
+          "instruction": "Elige «Mucho gusto» en inglés.",
+          "phraseId": "en-meet",
+          "hint": "La expresión es Nice to meet you.",
+          "explanation": "Nice to meet you. Se usa cuando conoces a alguien por primera vez.",
+          "options": ["Good morning", "Nice to meet you", "Thank you"],
+          "answer": "Nice to meet you"
+        },
+        {
+          "id": "en-match",
+          "type": "match",
+          "title": "Une las frases.",
+          "instruction": "Elige una frase en inglés y su significado en español.",
+          "phraseId": "en-thanks",
+          "hint": "Hello = hola · Thank you = gracias · Good morning = buenos días · Nice to meet you = mucho gusto.",
+          "explanation": "Ya reconoces cuatro frases útiles para una primera conversación.",
+          "pairs": [
+            {
+              "left": "Hello",
+              "right": "Hola"
+            },
+            {
+              "left": "Thank you",
+              "right": "Gracias"
+            },
+            {
+              "left": "Good morning",
+              "right": "Buenos días"
+            },
+            {
+              "left": "Nice to meet you",
+              "right": "Mucho gusto"
+            }
+          ]
+        },
+        {
+          "id": "en-thanks-write",
+          "type": "write",
+          "title": "Da las gracias.",
+          "instruction": "Escribe «Gracias» en inglés.",
+          "phraseId": "en-thanks",
+          "hint": "Puedes escribir Thank you o Thanks.",
+          "explanation": "Thank you. Thanks también es correcto y es un poco más informal.",
+          "answers": ["Thank you", "Thanks"]
+        },
+        {
+          "id": "en-hello-listen",
+          "type": "listen",
+          "title": "Escucha un saludo.",
+          "instruction": "Escucha y escribe la palabra en inglés.",
+          "phraseId": "en-hello",
+          "hint": "Vas a escuchar Hello.",
+          "explanation": "Hello. Escucha la pronunciación y repítela si quieres.",
+          "prompt": "Escribe lo que escuchas en inglés.",
+          "answers": ["Hello"]
+        },
+        {
+          "id": "en-bye-order",
+          "type": "order",
+          "title": "Prepara una despedida.",
+          "instruction": "Ordena «Hasta luego» en inglés.",
+          "phraseId": "en-bye",
+          "hint": "See + you + later.",
+          "explanation": "See you later. Una forma habitual de despedirse.",
+          "tokens": ["later", "See", "you"],
+          "answer": ["See", "you", "later"]
+        },
+        {
+          "id": "en-name-choice",
+          "type": "choice",
+          "title": "Reconoce una presentación.",
+          "instruction": "¿Qué significa «My name is Alex»?",
+          "phraseId": "en-name",
+          "hint": "My name significa mi nombre.",
+          "explanation": "My name is Alex significa me llamo Alex.",
+          "options": ["Soy de México", "Estoy bien", "Me llamo Alex"],
+          "answer": "Me llamo Alex"
+        },
+        {
+          "id": "en-morning-write",
+          "type": "write",
+          "title": "Recuerda el saludo.",
+          "instruction": "Escribe «Buenos días» en inglés.",
+          "phraseId": "en-morning",
+          "hint": "Good + morning.",
+          "explanation": "Good morning. Se usa al saludar por la mañana.",
+          "answers": ["Good morning"]
+        },
+        {
+          "id": "en-thanks-listen",
+          "type": "listen",
+          "title": "Escucha un agradecimiento.",
+          "instruction": "Escucha y escribe la frase en inglés.",
+          "phraseId": "en-thanks",
+          "hint": "Vas a escuchar Thank you.",
+          "explanation": "Thank you. Dos palabras para dar las gracias.",
+          "prompt": "Escribe la frase en inglés.",
+          "answers": ["Thank you"]
+        },
+        {
+          "id": "en-bye-write",
+          "type": "write",
+          "title": "Termina con una despedida.",
+          "instruction": "Escribe «Hasta luego» en inglés.",
+          "phraseId": "en-bye",
+          "hint": "La frase aprendida es See you later.",
+          "explanation": "See you later. Ya puedes saludar, presentarte, agradecer y despedirte.",
+          "answers": ["See you later", "See you soon"]
+        }
+      ]
+    }
+  ],
+  "license": "CC-BY-SA-4.0"
+}

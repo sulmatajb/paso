@@ -1,0 +1,226 @@
+{
+  "id": "es-placement-v1",
+  "courseId": "es-from-en",
+  "title": "Find your Spanish starting point",
+  "description": "Try a short mix of everyday Spanish, writing, and listening. We will suggest where to begin in Paso’s five-unit beginner course. This is a course starting-point check, not a certified proficiency test.",
+  "groups": [
+    {
+      "unitId": "es-first-conversations",
+      "questions": [
+        {
+          "id": "placement-u1-greeting",
+          "type": "choice",
+          "prompt": "It is 9 a.m. Choose the greeting that specifically means “Good morning.”",
+          "options": ["Hasta luego", "Mucho gusto", "Buenos días", "Buenas noches"],
+          "answers": ["Buenos días"],
+          "explanation": "Buenos días is the morning greeting. Hasta luego means see you later; mucho gusto is used when meeting someone."
+        },
+        {
+          "id": "placement-u1-introduction",
+          "type": "write",
+          "prompt": "Introduce yourself as Ana. Write “My name is Ana” in Spanish.",
+          "answers": [
+            "Me llamo Ana",
+            "Yo me llamo Ana",
+            "Mi nombre es Ana",
+            "Soy Ana",
+            "Yo soy Ana"
+          ],
+          "explanation": "Me llamo Ana is a natural introduction. Mi nombre es Ana and Soy Ana also introduce you as Ana."
+        },
+        {
+          "id": "placement-u1-listening",
+          "type": "listen",
+          "prompt": "Listen to the person describing their Spanish. Write the Spanish sentence you hear.",
+          "answers": ["Hablo un poco de español"],
+          "explanation": "Hablo un poco de español means “I speak a little Spanish.” Un poco de means a little of something.",
+          "clipKey": "es-from-en/es-getting-to-know-you/smalltalk-spanish"
+        },
+        {
+          "id": "placement-u1-cafe",
+          "type": "choice",
+          "prompt": "You want a coffee with milk but no sugar. Which order says all three things?",
+          "options": [
+            "Un café sin leche y con azúcar, por favor",
+            "Un café con leche y sin azúcar, por favor",
+            "Un té con leche y sin azúcar, por favor",
+            "Un café con leche y con azúcar, por favor"
+          ],
+          "answers": ["Un café con leche y sin azúcar, por favor"],
+          "explanation": "Con leche means with milk, and sin azúcar means without sugar. Con adds something; sin leaves it out."
+        }
+      ]
+    },
+    {
+      "unitId": "es-food-and-shopping",
+      "questions": [
+        {
+          "id": "placement-u2-restaurant",
+          "type": "choice",
+          "prompt": "A server asks “¿Prefiere carne o pescado?” You prefer fish. Which answer expresses that preference?",
+          "options": [
+            "No tengo hambre",
+            "Quiero pan con queso",
+            "Prefiero carne",
+            "Prefiero pescado"
+          ],
+          "answers": ["Prefiero pescado"],
+          "explanation": "Pescado is fish served as food. Prefiero pescado means “I prefer fish.”"
+        },
+        {
+          "id": "placement-u2-payment",
+          "type": "write",
+          "prompt": "Ask “Can I pay by card?” in Spanish. Begin with “¿Puedo…?”.",
+          "answers": [
+            "¿Puedo pagar con tarjeta?",
+            "¿Puedo pagar por tarjeta?",
+            "¿Puedo pagar mediante tarjeta?",
+            "¿Puedo pagar usando una tarjeta?",
+            "¿Puedo pagar con una tarjeta?",
+            "¿Puedo pagar con la tarjeta?"
+          ],
+          "explanation": "¿Puedo pagar con tarjeta? is a common way to ask about card payment. Puedo means I can; pagar means to pay."
+        },
+        {
+          "id": "placement-u2-listening",
+          "type": "listen",
+          "prompt": "Listen to a request at the market. Write the Spanish sentence you hear. You can write the number as a word or a digit.",
+          "answers": ["Quisiera cuatro manzanas", "Quisiera 4 manzanas"],
+          "explanation": "Quisiera cuatro manzanas means “I would like four apples.” Cuatro is four, and manzanas is plural.",
+          "clipKey": "es-from-en/es-at-the-market/es-at-the-market-apples"
+        },
+        {
+          "id": "placement-u2-clothes",
+          "type": "choice",
+          "prompt": "You try on a T-shirt. It is too big, so you ask for a smaller size. Choose the matching reply.",
+          "options": [
+            "Me queda bien. Me llevo esta camiseta",
+            "Es demasiado pequeña. Necesito una talla más grande",
+            "Es demasiado grande. Necesito una talla más pequeña",
+            "La quiero azul. Necesito una bolsa"
+          ],
+          "answers": ["Es demasiado grande. Necesito una talla más pequeña"],
+          "explanation": "Demasiado grande means too big. Una talla más pequeña means a smaller size. The second sentence explains the change you need."
+        }
+      ]
+    },
+    {
+      "unitId": "es-daily-life",
+      "questions": [
+        {
+          "id": "placement-u3-family",
+          "type": "choice",
+          "prompt": "Choose the sentence that says your sister is twenty years old.",
+          "options": [
+            "Mi hermana tiene veinte años",
+            "Mi hermano tiene veinte años",
+            "Mi hermana tiene dos años",
+            "Mi padre se llama Luis"
+          ],
+          "answers": ["Mi hermana tiene veinte años"],
+          "explanation": "Spanish expresses age with tener: tiene veinte años. Hermana means sister; hermano means brother."
+        },
+        {
+          "id": "placement-u3-routine",
+          "type": "write",
+          "prompt": "Write “I get up at eight” in Spanish. Use the verb levantarse. You can write the time as a word or a digit.",
+          "answers": [
+            "Me levanto a las ocho",
+            "Yo me levanto a las ocho",
+            "A las ocho me levanto",
+            "A las ocho yo me levanto",
+            "Me levanto a las 8",
+            "Yo me levanto a las 8",
+            "A las 8 me levanto",
+            "A las 8 yo me levanto"
+          ],
+          "explanation": "Me levanto means I get up. A las ocho means at eight. The time can go at the beginning or the end."
+        },
+        {
+          "id": "placement-u3-listening",
+          "type": "listen",
+          "prompt": "Listen for the starting time. Write the Spanish sentence you hear. A written time such as 9:30 is also accepted.",
+          "answers": [
+            "Empieza a las nueve y media",
+            "Empieza a las 9 y media",
+            "Empieza a las 9:30",
+            "Empieza a las nueve treinta"
+          ],
+          "explanation": "Empieza a las nueve y media means “It starts at half past nine.” Y media adds half an hour.",
+          "clipKey": "es-from-en/es-time-and-days/es-time-and-days-nine-thirty"
+        },
+        {
+          "id": "placement-u3-weekend",
+          "type": "choice",
+          "prompt": "A friend invites you to the park on Saturday. You cannot go that day, but you are free on Sunday. Choose the reply that explains both.",
+          "options": [
+            "Sí, me encantaría. Nos vemos el sábado",
+            "No puedo el domingo. Tengo tiempo el sábado",
+            "No puedo el sábado ni el domingo",
+            "No puedo el sábado. Tengo tiempo el domingo"
+          ],
+          "answers": ["No puedo el sábado. Tengo tiempo el domingo"],
+          "explanation": "No puedo el sábado rules out Saturday. Tengo tiempo el domingo offers Sunday as an alternative."
+        }
+      ]
+    },
+    {
+      "unitId": "es-out-and-about",
+      "questions": [
+        {
+          "id": "placement-u4-train",
+          "type": "choice",
+          "prompt": "At the ticket desk, you are asked “¿Solo ida o ida y vuelta?” You need to travel there and back. Choose your answer.",
+          "options": [
+            "Solo ida, por favor",
+            "Ida y vuelta, por favor",
+            "El tren sale a las diez",
+            "Quiero ir mañana"
+          ],
+          "answers": ["Ida y vuelta, por favor"],
+          "explanation": "Ida y vuelta means a round trip: the outward journey and the return. Solo ida is one way."
+        },
+        {
+          "id": "placement-u4-plans",
+          "type": "write",
+          "prompt": "Write “We are going to visit the museum tomorrow” in Spanish. Use ir a + infinitive to express the plan.",
+          "answers": [
+            "Vamos a visitar el museo mañana",
+            "Mañana vamos a visitar el museo",
+            "Nosotros vamos a visitar el museo mañana",
+            "Mañana nosotros vamos a visitar el museo",
+            "Nosotros mañana vamos a visitar el museo",
+            "Nosotras vamos a visitar el museo mañana",
+            "Mañana nosotras vamos a visitar el museo",
+            "Nosotras mañana vamos a visitar el museo",
+            "Vamos a visitar mañana el museo",
+            "Nosotros vamos a visitar mañana el museo",
+            "Nosotras vamos a visitar mañana el museo"
+          ],
+          "explanation": "Vamos a visitar expresses a shared plan. Mañana means tomorrow and can appear in several natural positions. Nosotros or nosotras is optional."
+        },
+        {
+          "id": "placement-u4-listening",
+          "type": "listen",
+          "prompt": "Listen to two directions given together. Write the Spanish sentence you hear.",
+          "answers": ["Sigue todo recto y gira a la izquierda"],
+          "explanation": "Sigue todo recto means keep going straight. Gira a la izquierda means turn left. The y joins the two instructions.",
+          "clipKey": "es-from-en/es-around-town/es-around-town-straight-left"
+        },
+        {
+          "id": "placement-u4-meeting",
+          "type": "choice",
+          "prompt": "You arranged to meet outside the station at five, but your train arrives at 5:10. Which message explains the delay and asks your friend to wait?",
+          "options": [
+            "Ya estoy aquí. Nos vemos a las cinco",
+            "Voy a llegar un poco tarde. ¿Puedes esperar diez minutos?",
+            "Voy a llegar temprano. ¿Dónde está la estación?",
+            "Tengo que comprar un billete. ¿Qué tiempo hace?"
+          ],
+          "answers": ["Voy a llegar un poco tarde. ¿Puedes esperar diez minutos?"],
+          "explanation": "Voy a llegar un poco tarde explains that you will arrive a little late. ¿Puedes esperar diez minutos? asks for a ten-minute wait."
+        }
+      ]
+    }
+  ]
+}

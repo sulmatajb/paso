@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 2,
+  "id": "fr-from-en",
+  "version": 1,
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "title": "French for first connections",
+  "description": "A first French lesson for greetings and introductions.",
+  "unit": {
+    "id": "fr-first-steps",
+    "title": "Your first words",
+    "description": "Say hello, introduce yourself, and leave on a friendly note."
+  },
+  "lessons": [
+    {
+      "id": "fr-first-bonjour",
+      "version": 1,
+      "title": "Your first bonjour",
+      "subtitle": "Make a connection in French.",
+      "estimatedMinutes": 6,
+      "prerequisites": [],
+      "phrases": [
+        {
+          "id": "fr-hello",
+          "target": "Bonjour",
+          "translation": "Hello",
+          "note": "Bonjour is a polite daytime greeting. It can mean hello or good morning.",
+          "acceptedAnswers": ["Bonjour", "Salut"]
+        },
+        {
+          "id": "fr-evening",
+          "target": "Bonsoir",
+          "translation": "Good evening",
+          "note": "Use bonsoir when greeting someone in the evening."
+        },
+        {
+          "id": "fr-name",
+          "target": "Je m’appelle Alex",
+          "translation": "My name is Alex",
+          "note": "Je m’appelle literally means “I call myself.” Add your name.",
+          "acceptedAnswers": ["Je m’appelle Alex", "Mon nom est Alex"]
+        },
+        {
+          "id": "fr-please",
+          "target": "S’il vous plaît",
+          "translation": "Please",
+          "note": "Use this polite form with someone you address as vous. S’il te plaît is the informal singular form.",
+          "acceptedAnswers": ["S’il vous plaît", "S’il te plaît"]
+        },
+        {
+          "id": "fr-thanks",
+          "target": "Merci",
+          "translation": "Thank you",
+          "note": "Merci is a simple way to say thank you."
+        },
+        {
+          "id": "fr-bye",
+          "target": "À bientôt",
+          "translation": "See you soon",
+          "note": "À bientôt is a friendly goodbye. The accents are part of the spelling."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "fr-hello-choice",
+          "type": "choice",
+          "title": "Begin with bonjour.",
+          "instruction": "Choose the polite daytime greeting “Hello.”",
+          "phraseId": "fr-hello",
+          "hint": "Bonjour is a greeting for the daytime.",
+          "explanation": "Bonjour means hello or good morning.",
+          "options": ["Merci", "Bonjour", "À bientôt"],
+          "answer": "Bonjour"
+        },
+        {
+          "id": "fr-evening-choice",
+          "type": "choice",
+          "title": "As evening arrives.",
+          "instruction": "What does “Bonsoir” mean?",
+          "phraseId": "fr-evening",
+          "hint": "Soir means evening.",
+          "explanation": "Bonsoir means good evening. Use it when greeting someone in the evening.",
+          "options": ["Good evening", "Thank you", "See you soon"],
+          "answer": "Good evening"
+        },
+        {
+          "id": "fr-name-order",
+          "type": "order",
+          "title": "Introduce yourself.",
+          "instruction": "Build “My name is Alex” in French.",
+          "phraseId": "fr-name",
+          "hint": "Je + m’appelle + Alex.",
+          "explanation": "Je m’appelle Alex. Keep the apostrophe in m’appelle.",
+          "tokens": ["Alex", "m’appelle", "Je"],
+          "answer": ["Je", "m’appelle", "Alex"]
+        },
+        {
+          "id": "fr-please-choice",
+          "type": "choice",
+          "title": "Ask politely.",
+          "instruction": "What does “S’il vous plaît” mean?",
+          "phraseId": "fr-please",
+          "hint": "This phrase makes a request polite.",
+          "explanation": "S’il vous plaît means please. Vous can address one person formally or several people.",
+          "options": ["See you soon", "Please", "Good evening"],
+          "answer": "Please"
+        },
+        {
+          "id": "fr-match",
+          "type": "match",
+          "title": "Find the connections.",
+          "instruction": "Match each French phrase to its English meaning.",
+          "phraseId": "fr-thanks",
+          "hint": "Bonjour = hello · Bonsoir = good evening · Merci = thank you · À bientôt = see you soon.",
+          "explanation": "Four short phrases can help you open and close a conversation.",
+          "pairs": [
+            {
+              "left": "Bonjour",
+              "right": "Hello"
+            },
+            {
+              "left": "Bonsoir",
+              "right": "Good evening"
+            },
+            {
+              "left": "Merci",
+              "right": "Thank you"
+            },
+            {
+              "left": "À bientôt",
+              "right": "See you soon"
+            }
+          ]
+        },
+        {
+          "id": "fr-thanks-write",
+          "type": "write",
+          "title": "A little gratitude.",
+          "instruction": "Write “Thank you” in French.",
+          "phraseId": "fr-thanks",
+          "hint": "Five letters: merci.",
+          "explanation": "Merci means thank you.",
+          "answers": ["Merci"]
+        },
+        {
+          "id": "fr-hello-listen",
+          "type": "listen",
+          "title": "Listen to a greeting.",
+          "instruction": "Listen, then write the French word you hear.",
+          "phraseId": "fr-hello",
+          "hint": "You will hear Bonjour.",
+          "explanation": "Bonjour. Listen to the whole word, then try saying it yourself.",
+          "prompt": "Write what you hear in French.",
+          "answers": ["Bonjour"]
+        },
+        {
+          "id": "fr-please-order",
+          "type": "order",
+          "title": "Build a polite phrase.",
+          "instruction": "Build the formal or plural form of “Please.”",
+          "phraseId": "fr-please",
+          "hint": "S’il + vous + plaît.",
+          "explanation": "S’il vous plaît. The form s’il te plaît is used with one person you address informally.",
+          "tokens": ["plaît", "S’il", "vous"],
+          "answer": ["S’il", "vous", "plaît"]
+        },
+        {
+          "id": "fr-name-choice",
+          "type": "choice",
+          "title": "Recognize an introduction.",
+          "instruction": "What does “Je m’appelle Alex” mean?",
+          "phraseId": "fr-name",
+          "hint": "Je m’appelle means my name is.",
+          "explanation": "Je m’appelle Alex means my name is Alex.",
+          "options": ["My name is Alex", "I am well", "See you soon, Alex"],
+          "answer": "My name is Alex"
+        },
+        {
+          "id": "fr-evening-write",
+          "type": "write",
+          "title": "Recall the evening greeting.",
+          "instruction": "Write “Good evening” in French.",
+          "phraseId": "fr-evening",
+          "hint": "One word: bonsoir.",
+          "explanation": "Bonsoir. In French, this greeting is written as one word.",
+          "answers": ["Bonsoir"]
+        },
+        {
+          "id": "fr-thanks-listen",
+          "type": "listen",
+          "title": "Hear a thank-you.",
+          "instruction": "Listen, then write the French word you hear.",
+          "phraseId": "fr-thanks",
+          "hint": "You will hear Merci.",
+          "explanation": "Merci. A useful word in almost every conversation.",
+          "prompt": "Write the word in French.",
+          "answers": ["Merci"]
+        },
+        {
+          "id": "fr-bye-write",
+          "type": "write",
+          "title": "Until next time.",
+          "instruction": "Write “See you soon” in French.",
+          "phraseId": "fr-bye",
+          "hint": "À bientôt. Remember à and ô.",
+          "explanation": "À bientôt! You can now greet someone, introduce yourself, ask politely, and say thank you.",
+          "answers": ["À bientôt", "À très bientôt"]
+        }
+      ]
+    }
+  ],
+  "license": "CC-BY-SA-4.0"
+}
