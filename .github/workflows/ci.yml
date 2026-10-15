@@ -7,7 +7,17 @@ concurrency:
   cancel-in-progress: true
 jobs:
   verify:
-    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            browsers: chromium
+            projects: --project=desktop-chromium --project=mobile-chromium
+          - os: macos-15
+            browsers: webkit
+            projects: --project=mobile-webkit
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -15,8 +25,10 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - run: python3 scripts/audio/validate.py
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - if: runner.os == 'Linux'
+        run: python3 scripts/audio/validate.py
       - run: python3 -m py_compile self-host/huggingface/app.py self-host/huggingface/models.py self-host/huggingface/service.py
       - run: npm ci
       - run: npm run format:check
@@ -24,11 +36,11 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run db:init
-      - run: npx playwright install --with-deps chromium webkit
-      - run: npm run test:e2e
+      - run: npx playwright install --with-deps ${{ matrix.browsers }}
+      - run: npm run test:e2e -- ${{ matrix.projects }}
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: browser-test-results
+          name: browser-test-results-${{ matrix.os }}
           path: test-results/
           retention-days: 7

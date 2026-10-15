@@ -37,6 +37,32 @@ test('community mode shows the free quota and recording disclosure without downl
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
+test('missing recording support leaves an explicit error and a usable typed reply', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(window, 'MediaRecorder', { value: undefined });
+  });
+  await page.route('**/api/account', (route) =>
+    route.fulfill({
+      json: {
+        user: null,
+        communitySpace: 'test-owner/test-space',
+        transcription: true,
+        conversation: true,
+        voice: true,
+      },
+    }),
+  );
+  await page.goto('/#conversation');
+  await page.getByRole('button', { name: /Make a new friend/ }).click();
+  await page.getByRole('button', { name: 'Record reply', exact: true }).click();
+  await expect(page.getByRole('alert')).toContainText('Could not open the microphone');
+  await expect(page.getByRole('textbox')).toBeEnabled();
+  await page.getByRole('textbox').fill('Hola, me llamo Alex.');
+  await expect(page.getByRole('button', { name: 'Send reply' })).toBeEnabled();
+});
+
 test('server mode records and reviews replies on phones without downloading model weights', async ({
   page,
   browserName,

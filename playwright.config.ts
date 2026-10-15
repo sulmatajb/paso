@@ -15,10 +15,16 @@ export default defineConfig({
       name: 'mobile-chromium',
       use: { ...devices['Pixel 7'], viewport: { width: 393, height: 851 } },
     },
-    {
-      name: 'mobile-webkit',
-      use: { ...devices['iPhone 13'], viewport: { width: 390, height: 844 } },
-    },
+    // Playwright's Linux WebKit omits MediaRecorder. Run the actual recording
+    // journey on macOS, where WebKit exposes the same media API as Safari.
+    ...(process.platform === 'darwin'
+      ? [
+          {
+            name: 'mobile-webkit',
+            use: { ...devices['iPhone 13'], viewport: { width: 390, height: 844 } },
+          },
+        ]
+      : []),
   ],
   webServer: {
     command: 'npm run preview -- --port 5173',

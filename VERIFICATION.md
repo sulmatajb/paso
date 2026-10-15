@@ -1,5 +1,11 @@
 # Verification — 2026-10-14
 
+## Public repository verification
+
+The source release was installed from the lockfile, built, and exercised from a fresh GitHub clone. The documented local development identity, D1 initialization, and `.dev.vars` community configuration were verified without consuming live GPU quota. All 42 unit/integration tests and the original 27-case browser matrix passed on the development Mac, and all 588 audio clips passed checksum and full decoding checks. Gitleaks scanned the public Git history with only the documented generated-fingerprint and class-import exceptions.
+
+The first Linux CI run passed 26 browser cases but could not start the WebKit recorder. An isolated diagnostic run established that `typeof MediaRecorder` is `undefined` in that Playwright Linux WebKit build. The CI matrix therefore runs Chromium on Linux and the real WebKit recording path on macOS. The local default follows the same platform boundary. An additional browser case explicitly verifies the typed fallback when recording is unavailable. This is an OS/runtime limitation, not evidence of physical-phone compatibility. Current remote results are linked by the README's CI badge.
+
 ## Free Hugging Face community server
 
 The public Space `bessi190/paso-voice-practice` is running commit `8f7bbba7794965d22c606082ef092c9ba9ada91c` on verified `zero-a10g` (ZeroGPU Free) hardware. No paid hardware, subscription, Inference Provider, or owner token is configured. The app integration uses `HUGGINGFACE_SPACE` and anonymous direct browser requests, with a link to the canonical Space for signed-in personal allowance. Being signed in elsewhere does not automatically authenticate Paso's cross-origin requests.

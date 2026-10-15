@@ -117,7 +117,7 @@ npx playwright install chromium webkit
 npm run test:e2e
 ```
 
-Linux may also need `npx playwright install --with-deps chromium webkit`. Audio validation requires Python 3 and FFmpeg/ffprobe:
+Linux may also need `npx playwright install --with-deps chromium`. The default local suite runs Chromium on every platform and additionally WebKit on macOS. Playwright’s Linux WebKit build has no `MediaRecorder`; GitHub CI runs the complete WebKit recording journey on a standard macOS runner. Audio validation requires Python 3 and FFmpeg/ffprobe:
 
 ```sh
 python3 scripts/audio/validate.py
@@ -133,6 +133,8 @@ npx playwright test -c playwright.models.config.ts
 # Uses the selected Space's free allowance; not run by ordinary CI:
 PASO_HF_SPACE=owner/space-name npx playwright test -c playwright.community.config.ts
 ```
+
+The community-model command includes a WebKit recording case; on Linux add `--project=mobile-chromium`. Run its WebKit case on macOS.
 
 Read [VERIFICATION.md](../VERIFICATION.md) before interpreting test results. Browser emulation does not substitute for real-device testing.
 

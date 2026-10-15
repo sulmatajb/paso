@@ -91,7 +91,7 @@ npx playwright install chromium webkit
 npm run test:e2e
 ```
 
-CI runs audio integrity checks, formatting, TypeScript, unit/integration tests, and browser journeys on desktop Chromium, mobile Chromium, and mobile WebKit. Standard browser CI does not download inference models or consume the community Space's allowance. [Optional real-model tests](docs/setup.md#verification) are separate.
+CI runs audio integrity checks, formatting, TypeScript, unit/integration tests, and browser journeys on desktop/mobile Chromium (Linux) and mobile WebKit (macOS). The local browser suite includes Chromium everywhere and WebKit on macOS; Playwright’s Linux WebKit build does not expose the recording API. Standard browser CI does not download inference models or consume the community Space's allowance. [Optional real-model tests](docs/setup.md#verification) are separate.
 
 Built with React, TypeScript, Vinext/Vite, Workers/D1, Dexie, Zod, and ts-fsrs. [Architecture and privacy](docs/architecture.md) · [Privacy policy](PRIVACY.md).
 
