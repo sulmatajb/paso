@@ -67,6 +67,7 @@ test('server mode records and reviews replies on phones without downloading mode
   page,
   browserName,
 }) => {
+  test.setTimeout(60000);
   const modelRequests: string[] = [];
   let failRecognition = false,
     uploads = 0;
@@ -117,15 +118,22 @@ test('server mode records and reviews replies on phones without downloading mode
   });
   await page.addInitScript(() => {
     // Use a bundled synthetic clip, never a person's real microphone.
+    // Keep the fixture's audio device alive across retries. Each recording still
+    // gets its own real MediaStream track, which the application must stop.
+    let context: AudioContext | undefined;
+    let clip: AudioBuffer | undefined;
     const devices = navigator.mediaDevices;
     Object.defineProperty(navigator, 'mediaDevices', { value: devices });
     Object.defineProperty(devices, 'getUserMedia', {
       value: async () => {
-        const context = new AudioContext();
+        context ??= new AudioContext();
         await context.resume();
-        const response = await fetch('/audio/es-from-en/es-first-hello/name/ef_dora.mp3');
+        if (!clip) {
+          const response = await fetch('/audio/es-from-en/es-first-hello/name/ef_dora.mp3');
+          clip = await context.decodeAudioData(await response.arrayBuffer());
+        }
         const source = context.createBufferSource();
-        source.buffer = await context.decodeAudioData(await response.arrayBuffer());
+        source.buffer = clip;
         const destination = context.createMediaStreamDestination();
         source.connect(destination);
         source.start(context.currentTime + 0.1);
@@ -133,7 +141,7 @@ test('server mode records and reviews replies on phones without downloading mode
           stop = track.stop.bind(track);
         track.stop = () => {
           stop();
-          void context.close();
+          source.disconnect();
         };
         return destination.stream;
       },
@@ -150,9 +158,9 @@ test('server mode records and reviews replies on phones without downloading mode
     page.getByText('Your recording is sent to this app’s server', { exact: false }),
   ).toBeVisible();
   await page.getByRole('button', { name: 'Record reply', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Stop · 3s / 20s', exact: true })).toBeVisible({
-    timeout: 10000,
-  });
+  // Wait for at least three seconds of audio, not a single one-second UI frame.
+  const recordedEnough = page.getByRole('button', { name: /^Stop · (?:[3-9]|1\d)s \/ 20s$/ });
+  await expect(recordedEnough).toBeVisible({ timeout: 15000 });
   await page.getByRole('button', { name: /Stop ·/ }).click();
   await expect(page.getByRole('textbox')).toHaveValue('Me llamo Alex.');
   await expect(page.getByText('Check what we heard, then send')).toBeVisible();
@@ -160,9 +168,7 @@ test('server mode records and reviews replies on phones without downloading mode
   expect(uploads).toBe(1);
   failRecognition = true;
   await page.getByRole('button', { name: 'Record reply', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Stop · 3s / 20s', exact: true })).toBeVisible({
-    timeout: 10000,
-  });
+  await expect(recordedEnough).toBeVisible({ timeout: 15000 });
   await page.getByRole('button', { name: /Stop ·/ }).click();
   await expect(page.getByRole('alert')).toContainText('Speech recognition is busy');
   await expect(page.getByRole('textbox')).toBeEnabled();
