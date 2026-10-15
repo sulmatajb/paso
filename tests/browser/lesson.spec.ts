@@ -241,6 +241,9 @@ test('voice selection, search, export, offline reload and audio range requests',
   page,
   context,
 }, info) => {
+  // This journey downloads a full course and installs the offline shell. The
+  // download assertion alone permits 30s; allow the rest of the flow time too.
+  test.setTimeout(120000);
   await observeAudio(page);
   await visit(page, 'settings');
   await accessible(page);
@@ -272,9 +275,16 @@ test('voice selection, search, export, offline reload and audio range requests',
   await page.getByRole('textbox', { name: 'Search phrases' }).fill('café');
   await expect(page.locator('.phrasebook-card').first()).toContainText('café');
   await fits(page);
-  await page.evaluate(async () => {
-    await navigator.serviceWorker.ready;
-  });
+  await expect
+    .poll(
+      () =>
+        page.evaluate(async () => {
+          const registration = await navigator.serviceWorker.getRegistration();
+          return registration?.active?.state ?? registration?.installing?.state ?? 'not registered';
+        }),
+      { message: 'The offline shell must activate before disconnecting', timeout: 60000 },
+    )
+    .toBe('activated');
   await page.reload();
   await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
   await context.setOffline(true);

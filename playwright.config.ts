@@ -3,7 +3,8 @@ export default defineConfig({
   testDir: './tests/browser',
   testIgnore: '**/speech.spec.ts',
   fullyParallel: true,
-  workers: 3,
+  // Media capture and offline-cache setup share limited CI runner resources.
+  workers: process.env.CI ? 1 : 3,
   retries: 0,
   use: { baseURL: 'http://127.0.0.1:5173', trace: 'retain-on-failure' },
   projects: [
